@@ -1,6 +1,6 @@
 % Generate all the figures in the paper.
 
-reRun = false;  % re-run the simulations, otherwise use existing data files
+reRun = true;  % re-run the simulations, otherwise use existing data files
 
 if reRun, rng('default'); end
 
