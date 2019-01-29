@@ -88,7 +88,7 @@ double winding_angle(double T, double r0, double D, double C, double dt_min)
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
-	//X = Brownian_pt_drift_nut_helper(M,T,r0,D,C,dt)
+	//X = Brownian_point_drift_helper(M,T,r0,D,C,dt)
 
     const mwSize M = (mwSize) mxGetScalar(prhs[0]);
     const double T =  mxGetScalar(prhs[1]);

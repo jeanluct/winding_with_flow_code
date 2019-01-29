@@ -5,7 +5,7 @@ function generateFigures(figureName, reRun)
 	dataFile = sprintf('data/%s.mat', figureName);
 
 	if regexp(figureName, regexptranslate('wildcard','inner_disk_correction*'))
-		plotFunction	= 'inner_disk_correction_plot';
+		plotFunction	= 'Brownian_inner_disk_correction_plot';
 		index		= strsplit(figureName,'inner_disk_correction');
 		index		= index{2};
 		switch index
@@ -23,16 +23,16 @@ function generateFigures(figureName, reRun)
 		if reRun == true
 			X = zeros(M,1);
 			for i = 1:M-1
-				X(i) = Brownian_inner_disk_helper(1,T,r0,ra,D,C,dt);
+				X(i) = Brownian_inner_disk_drift_helper(1,T,r0,ra,D,C,dt);
 			end
 			save(dataFile);
 		else
 			load(dataFile);
 		end
 
-	elseif regexp(figureName, regexptranslate('wildcard','inner_disk*'))
-		plotFunction	= 'Brownian_inner_disk_plot';
-		index 			= strsplit(figureName,'inner_disk');
+	elseif regexp(figureName, regexptranslate('wildcard','inner_disk_drift*'))
+		plotFunction	= 'Brownian_inner_disk_drift_plot';
+		index 			= strsplit(figureName,'inner_disk_drift');
 		index			= index{2};
 		switch index
 			case '1'
@@ -55,7 +55,7 @@ function generateFigures(figureName, reRun)
 		if reRun == true
 			X = zeros(M,1);
 			for i = 1:M-1
-				X(i) = Brownian_inner_disk_helper(1,T,r0,ra,D,C,dt);
+				X(i) = Brownian_inner_disk_drift_helper(1,T,r0,ra,D,C,dt);
 			end
 			save(dataFile);
 		else
@@ -91,9 +91,9 @@ function generateFigures(figureName, reRun)
 			load(dataFile);
 		end
 
-	elseif regexp(figureName, regexptranslate('wildcard','pt_drift*'))
-		plotFunction	= 'Brownian_pt_drift_plot';
-		index 			= strsplit(figureName,'pt_drift');
+	elseif regexp(figureName, regexptranslate('wildcard','point_drift*'))
+		plotFunction	= 'Brownian_point_drift_plot';
+		index 			= strsplit(figureName,'point_drift');
 		index			= index{2};
 		switch index
 			case '1'
@@ -117,16 +117,16 @@ function generateFigures(figureName, reRun)
 			l = floor(M/k);
 			X = zeros(M,1);
 			for i = 0:l-1
-				X(i*k+1:(i+1)*k,1) = Brownian_pt_drift_nut_helper(k,T,r0,D,C,dt);
+				X(i*k+1:(i+1)*k,1) = Brownian_point_drift_helper(k,T,r0,D,C,dt);
 			end
 			save(dataFile);
 		else
 			load(dataFile);
 		end
 
-	elseif regexp(figureName, regexptranslate('wildcard','pt_correction*'))
-		plotFunction	= 'pt_correction_plot';
-		index 			= strsplit(figureName,'pt_correction');
+	elseif regexp(figureName, regexptranslate('wildcard','point_correction*'))
+		plotFunction	= 'Brownian_point_correction_plot';
+		index 			= strsplit(figureName,'point_correction');
 		index			= index{2};
 		switch index
 			case '1'
@@ -144,7 +144,7 @@ function generateFigures(figureName, reRun)
 			l = floor(M/k);
 			X = zeros(M,1);
 			for i = 0:l-1
-				X(i*k+1:(i+1)*k,1) = Brownian_pt_drift_nut_helper(k,T,r0,D,C,dt);
+				X(i*k+1:(i+1)*k,1) = Brownian_point_drift_helper(k,T,r0,D,C,dt);
 			end
 			save(dataFile);
 		else
