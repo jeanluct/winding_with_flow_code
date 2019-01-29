@@ -19,6 +19,6 @@ The figures are stored in the subfolder `figs/`, and the data is stored in `data
 This code is released under the [GNU General Public License v3][4].  See [COPYING](/COPYING/) and [LICENSE](/LICENSE/).
 
 [1]: https://arxiv.org/abs/1810.13364
-[2]: https://www.math.wisc.edu/~jeanluc/
+[2]: http://www.math.wisc.edu/~jeanluc/
 [3]: https://www.mathworks.com/help/matlab/matlab_external/what-you-need-to-build-mex-files.html
 [4]: http://www.gnu.org/licenses/gpl-3.0.html
