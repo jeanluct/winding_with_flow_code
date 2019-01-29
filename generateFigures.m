@@ -21,6 +21,7 @@ function generateFigures(figureName, reRun)
 		end
 		[r0,ra,dt,D,C,T,M] = temp{:};
 		if reRun == true
+			checkMexCompiled('Brownian_inner_disk_drift_helper.cpp')
 			X = zeros(M,1);
 			for i = 1:M-1
 				X(i) = Brownian_inner_disk_drift_helper(1,T,r0,ra,D,C,dt);
@@ -53,6 +54,7 @@ function generateFigures(figureName, reRun)
 		end
 		[r0,ra,dt,D,C,T,M] = temp{:};
 		if reRun == true
+			checkMexCompiled('Brownian_inner_disk_drift_helper.cpp')
 			X = zeros(M,1);
 			for i = 1:M-1
 				X(i) = Brownian_inner_disk_drift_helper(1,T,r0,ra,D,C,dt);
@@ -81,6 +83,7 @@ function generateFigures(figureName, reRun)
 		end
 		[r0,ra,rb,dt,D,C,T,M,k] = temp{:};
 		if reRun == true
+			checkMexCompiled('Brownian_annulus_drift_helper.cpp')
 			l = floor(M/k);
 			X = zeros(M,1);
 			for i = 0:l-1
@@ -114,6 +117,7 @@ function generateFigures(figureName, reRun)
 		end
 		[r0,D,C,dt,T,M,k] = temp{:};
 		if reRun == true
+			checkMexCompiled('Brownian_point_drift_helper.cpp')
 			l = floor(M/k);
 			X = zeros(M,1);
 			for i = 0:l-1
@@ -141,6 +145,7 @@ function generateFigures(figureName, reRun)
 		end
 		[r0,D,C,dt,T,M,k] = temp{:};
 		if reRun == true
+			checkMexCompiled('Brownian_point_drift_helper.cpp')
 			l = floor(M/k);
 			X = zeros(M,1);
 			for i = 0:l-1
